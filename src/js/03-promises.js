@@ -22,8 +22,8 @@ function createPromise(position, delay) {
 
 btnSubmit.addEventListener('click', e => {
   e.preventDefault();
-  let firstDelay = Number(delay.value); // конвертація затримки в ЧИСЛО
-  let delayStep = Number(step.value); // конвертація кроку в ЧИСЛО
+  let firstDelay = Number(delay.value); 
+  let delayStep = Number(step.value); 
 
   for (let i = 0; i < amount.value; i += 1) {
         createPromise(1 + i, firstDelay + i * delayStep)
