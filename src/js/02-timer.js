@@ -56,8 +56,9 @@ function updateTimer(time) {
 }
 
 const timer = {
+    isActive: false,
     start() {
-        isActive = false;
+        
         if (this.isActive) {
                 return; 
         }
@@ -68,8 +69,11 @@ const timer = {
             const curentDate = Date.now();
             const deltaTime = starttDate - curentDate;
             const time = convertMs(deltaTime);
-            updateTimer(time)  
-            
+            // this.isActive = false;
+            if (time >= 0) {
+                updateTimer(time)
+            }
+                      
                        
         },1000)
     }
