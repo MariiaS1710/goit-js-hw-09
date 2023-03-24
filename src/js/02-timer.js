@@ -56,17 +56,20 @@ function updateTimer(time) {
 }
 
 const timer = {
-    
+    // isActive: false,
     start() {
         
-       
+        // if (this.isActive) {
+        //         return; 
+        // }
+        // this.isActive = true;
         this.intervalId =setInterval(() => {
             
             const starttDate = new Date(dateTimePicker.value);  
             const curentDate = Date.now();
             const deltaTime = starttDate - curentDate;
             const time = convertMs(deltaTime);
-           
+            // this.isActive = false;
             if (deltaTime >= 0) {
                 updateTimer(time);
             } else {
